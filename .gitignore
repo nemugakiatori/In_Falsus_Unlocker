@@ -1,4 +1,4 @@
-﻿# Python
+# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -6,10 +6,9 @@ __pycache__/
 venv/
 .pytest_cache/
 
-# PyInstaller build output
+# PyInstaller build output (the .spec is tracked on purpose)
 build/
 dist/
-*.spec
 
 # Local test artifacts / personal saves (never commit these)
 *.sav
