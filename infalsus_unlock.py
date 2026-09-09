@@ -394,7 +394,7 @@ def confirm_disclaimer(path, assume_yes=False):
     if not interactive:
         print("当前为非交互环境，未做任何修改。")
         print("确认同意后请加 --yes 参数重新运行，例如：")
-        print("  infalsus_unlock.exe patch --yes")
+        print("  %s patch --yes" % os.path.basename(sys.argv[0]))
         return False
 
     while True:
@@ -548,7 +548,7 @@ def _run(argv):
     if path is None:
         print("未能自动找到 savestate_V3.sav 存档文件。")
         print("请确认游戏已安装并至少运行过一次，或手动指定路径：")
-        print("  infalsus_unlock.exe patch \"D:\\路径\\savestate_V3.sav\"")
+        print("  %s patch \"D:\\路径\\savestate_V3.sav\"" % os.path.basename(sys.argv[0]))
         return 1
 
     try:
