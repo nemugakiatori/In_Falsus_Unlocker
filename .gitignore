@@ -1,0 +1,26 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# PyInstaller build output
+build/
+dist/
+*.spec
+
+# Local test artifacts / personal saves (never commit these)
+*.sav
+*.sav.orig
+*.sav.bak
+76561198*/
+dsh-spill/
+*.log
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
