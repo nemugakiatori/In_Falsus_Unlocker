@@ -1,4 +1,4 @@
-﻿"""In Falsus save patcher - unlock all story-gated songs.
+"""In Falsus save patcher - unlock all story-gated songs.
 
 Mechanism (verified from game data):
   RewardData.asset maps StoryIdentifier -> SongIds. Reading a story grants
@@ -15,10 +15,26 @@ Save layout of savestate_V3.sav:
        +14 byte HasAllowedFastForwardSkipping
   bytes after the dictionary are preserved untouched.
 """
-import os, struct, shutil, sys, json
+import glob
+import os
+import struct
+import shutil
+import sys
+import json
 
-SAVE = os.path.expanduser(
-    r"~\AppData\LocalLow\lowiro\infalsus\<SteamID>\release\savestate_V3.sav")
+SAVE_ROOT = os.path.expanduser(r"~\AppData\LocalLow\lowiro\infalsus")
+
+
+def find_save():
+    """Locate savestate_V3.sav under the In Falsus save folder (any SteamID)."""
+    hits = glob.glob(os.path.join(SAVE_ROOT, "**", "savestate_V3.sav"), recursive=True)
+    if not hits:
+        return os.path.join(SAVE_ROOT, "<SteamID>", "release", "savestate_V3.sav")
+    hits.sort(key=os.path.getmtime, reverse=True)
+    return hits[0]
+
+
+SAVE = find_save()
 BACKUP = SAVE + ".orig"
 HERE = os.path.dirname(os.path.abspath(__file__))
 IDS = os.path.join(HERE, "story_ids.json")

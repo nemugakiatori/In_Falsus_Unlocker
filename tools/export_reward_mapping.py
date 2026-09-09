@@ -1,5 +1,7 @@
-﻿import UnityPy, os, json
-game = r"E:\SteamLibrary\steamapps\common\In Falsus"
+import UnityPy, os, json
+
+# Point this at your own In Falsus install, or set IN_FALSUS_DIR.
+game = os.environ.get("IN_FALSUS_DIR", r"C:\Program Files (x86)\Steam\steamapps\common\In Falsus")
 root = os.path.join(game, "infalsus_Data","StreamingAssets","aa","StandaloneWindows64")
 def mb(fn):
     env=UnityPy.load(os.path.join(root,fn))
