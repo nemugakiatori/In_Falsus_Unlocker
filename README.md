@@ -3,10 +3,7 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-*In Falsus* 的非官方存档修改工具：解锁因剧情进度而被锁住的歌曲。
-
-An unofficial save-state patcher that unlocks the songs *In Falsus* gates
-behind Scenario (story) progress.
+《In Falsus》的非官方存档修改工具：解锁因剧情进度而被锁住的歌曲。
 
 ---
 
@@ -63,9 +60,6 @@ python infalsus_unlock.py patch --force  # 已是解锁状态时强制重写
   成就失效甚至账号受限。**由此产生的一切后果由使用者自行承担。**
 - 本仓库**不包含任何游戏资源、受版权保护的内容或游戏文件**，只包含工具源码本身，
   以及一份纯数字的剧情段标识符列表。
-- This is an unofficial, fan-made tool, not affiliated with lowiro. It only edits
-  the local save file — no game files, no memory patching, no network access.
-  Editing save data is unsupported; use at your own risk.
 
 ---
 
@@ -132,6 +126,6 @@ tools/falsus_save.py               早期调试用版本
 icons/app.ico                      程序图标
 ```
 
-## License
+## 许可证
 
 [MIT](LICENSE)
