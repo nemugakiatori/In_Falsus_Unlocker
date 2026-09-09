@@ -1,4 +1,4 @@
-﻿# In Falsus Unlocker
+# InFalsus-Unlocker
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -14,9 +14,9 @@ behind Scenario (story) progress.
 
 ### 方式一：双击 exe（推荐，无需安装 Python）
 
-1. 到 [Releases](../../releases) 下载 `infalsus_unlock.exe`。
+1. 到 [Releases](../../releases) 下载 `In_Falsus_unlocker.exe`。
 2. **先完全退出游戏**（任务管理器里确认没有 `infalsus.exe`）。
-3. **双击 `infalsus_unlock.exe`**。
+3. **双击 `In_Falsus_unlocker.exe`**。
 4. 阅读免责声明，输入 `y` 回车确认。
 5. 看到「存档修改完成，已自动备份原始存档」后按 Enter 关闭窗口，启动游戏即可。
 
@@ -106,9 +106,17 @@ offset 105126  条目 × 20 字节
 
 ## 自行构建 exe
 
+仓库里已经带好了构建配置，直接用 spec 构建即可得到与 Release 一致的产物：
+
 ```bash
 pip install pyinstaller
-pyinstaller --onefile --console --name infalsus_unlock --icon icons/app.ico infalsus_unlock.py
+pyinstaller In_Falsus_unlocker.spec
+```
+
+或者手动指定参数：
+
+```bash
+pyinstaller --onefile --console --name In_Falsus_unlocker --icon icons/app.ico infalsus_unlock.py
 ```
 
 > 打包出的单文件 exe 未做代码签名，部分杀毒软件可能误报，可从源码自行构建。
@@ -117,6 +125,7 @@ pyinstaller --onefile --console --name infalsus_unlock --icon icons/app.ico infa
 
 ```
 infalsus_unlock.py                 主工具（自包含，仅标准库）
+In_Falsus_unlocker.spec            PyInstaller 构建配置
 tools/export_reward_mapping.py     从游戏数据导出「剧情 → 歌曲」映射
 tools/story_ids.json               236 个剧情段标识符
 tools/falsus_save.py               早期调试用版本
